@@ -1,0 +1,27 @@
+device: cpu
+train:
+  batch_size: 256
+  train_epochs: 100
+  loss:
+    - crossentropyloss
+    - mseloss
+    - huberloss
+    - kldivloss
+    - bceloss
+  optim:
+    name: sgd
+    learning_rate: 0.001
+    others:
+      momentum: 0
+      dampening: 0
+  lr_scheduler:
+    name:
+    others:
+  model_path: ./pretrained
+  progress_path: ./train_progress
+  plot_epochs: 10
+model:
+
+test:
+  batch_size: 256
+
